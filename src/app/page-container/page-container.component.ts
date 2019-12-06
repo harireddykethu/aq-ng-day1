@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-container',
@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-container.component.css']
 })
 export class PageContainerComponent {
-  counter = 0;
-  baseTitle = 'Title here';
-  title = 'Default';
+  @Output() registration = new EventEmitter();
 
   clickHandler() {
-    this.counter++;
-    this.title = '';
-    this.title = `${this.baseTitle} clicked for ${this.counter}`;
+    this.registration.emit({
+      on: new Date(),
+      message: 'Child emitted an event'
+    });
   }
 }
