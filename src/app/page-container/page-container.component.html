@@ -2,7 +2,8 @@
 
 <p>Title: {{ title | uppercase }}</p>
 <p>Original Title: {{ title }}</p>
-<p>Amount: {{ amount | currency: 'INR' }}</p>
+<p>Amount (built-in): {{ amount | currency: 'INR' }}</p>
+<p>Amount (custom): {{ amount | currencyClone: 'INR':'/-' }}</p>
 <p>Rate: {{ rate | percent }}</p>
 <p>PI: {{ pi | number: '2.2-3' }}</p>
 <p>Today: {{ today | date: 'medium' | uppercase }}</p>
