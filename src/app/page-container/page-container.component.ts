@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-container.component.html',
   styleUrls: ['./page-container.component.css']
 })
-export class PageContainerComponent {
+export class PageContainerComponent implements OnInit {
   title = 'Hello there';
   pi = 3.141569;
   amount = 100.235;
@@ -19,5 +19,11 @@ export class PageContainerComponent {
       name: 'Vijay',
       city: 'Bengaluru'
     };
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.title = 'Changed!';
+    }, 3000);
   }
 }
