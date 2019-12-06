@@ -1,5 +1,9 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <app-page-container (registration)="handler($event)"></app-page-container>
+  <app-page-container
+    (increment)="incrementHandler()"
+    (decrement)="decrementHandler()"
+    [childCounter]="counter"
+  ></app-page-container>
 </div>

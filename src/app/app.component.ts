@@ -6,7 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  handler(args) {
-    console.log('Parent Handler', args);
+  counter = 0;
+
+  incrementHandler() {
+    if (this.counter < 25) {
+      this.counter++;
+    } else {
+      console.log('Limit breached');
+    }
+  }
+
+  decrementHandler() {
+    if (this.counter > 0) {
+      this.counter--;
+    } else {
+      console.log('Limit breached');
+    }
   }
 }

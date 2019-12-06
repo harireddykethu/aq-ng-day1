@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-container',
@@ -6,12 +6,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./page-container.component.css']
 })
 export class PageContainerComponent {
-  @Output() registration = new EventEmitter();
+  @Input() childCounter: number;
+  @Output() increment = new EventEmitter();
+  @Output() decrement = new EventEmitter();
 
-  clickHandler() {
-    this.registration.emit({
-      on: new Date(),
-      message: 'Child emitted an event'
-    });
+  incrementClickHandler() {
+    this.increment.emit();
+  }
+
+  decrementClickHandler() {
+    this.decrement.emit();
   }
 }
