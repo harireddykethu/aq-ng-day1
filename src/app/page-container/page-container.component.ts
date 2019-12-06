@@ -5,25 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-container.component.html',
   styleUrls: ['./page-container.component.css']
 })
-export class PageContainerComponent implements OnInit {
-  title = 'Hello there';
-  pi = 3.141569;
-  amount = 100.235;
-  rate = 0.78;
-  today = new Date();
+export class PageContainerComponent {
+  counter = 0;
+  baseTitle = 'Title here';
+  title = 'Default';
 
-  foo() {
-    //...
-    //console.log('called');
-    return {
-      name: 'Vijay',
-      city: 'Bengaluru'
-    };
-  }
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.title = 'Changed!';
-    }, 3000);
+  clickHandler() {
+    this.counter++;
+    this.title = '';
+    this.title = `${this.baseTitle} clicked for ${this.counter}`;
   }
 }
