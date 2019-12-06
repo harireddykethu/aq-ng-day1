@@ -1,8 +1,7 @@
-<h2>Counter: {{ childCounter }}</h2>
+<h4>Hi there!</h4>
 
-<button class="btn btn-primary mr-2" (click)="incrementClickHandler()">
-  Increment
-</button>
-<button class="btn btn-primary" (click)="decrementClickHandler()">
-  Decrement
-</button>
+<p #para class="font-weight-bold text-success">Paragraph is here</p>
+
+<p [className]="para.className">{{ para.textContent }}</p>
+
+<input type="text" class="form-control" value="{{ para.className }}" />
